@@ -27,7 +27,6 @@ namespace Files
                 file.WriteLine(info);
             }
 
-
         }
 
         private void btnRead_Click(object sender, EventArgs e)
