@@ -20,26 +20,23 @@ namespace Files
         private void btnWrite_Click(object sender, EventArgs e)
         {
             string info = txtAddInfo.Text;
-            System.IO.File.WriteAllLines(@"C:", info);
+            System.IO.File.WriteAllText("../../TextFile.txt", info);
 
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:", true))
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter("../../TextFile.txt", true))
             {
                 file.WriteLine(info);
             }
-
         }
-
         private void btnRead_Click(object sender, EventArgs e)
         {
-            string text = System.IO.File.ReadAllText(@"C:");
+            string text = System.IO.File.ReadAllText("../../TextFile.txt");
             lblData.Text = text;
-            
-            string[] lines = System.IO.File.ReadAllLines(@"C:");
-        for(int i =- 0; i < lines.Length; i++)
+            string[] lines = System.IO.File.ReadAllLines("../../TextFile.txt");
+
+            for(int i = 0; i < lines.Length; i++)
             {
                 lblData.Text += "\n" + lines[i];
             }
-
         }
     }
 }
