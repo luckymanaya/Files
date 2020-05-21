@@ -29,6 +29,7 @@ namespace Files
         }
         private void btnRead_Click(object sender, EventArgs e)
         {
+            //Writing to text file
             string text = System.IO.File.ReadAllText("../../TextFile.txt");
             lblData.Text = text;
             string[] lines = System.IO.File.ReadAllLines("../../TextFile.txt");
